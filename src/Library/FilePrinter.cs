@@ -4,9 +4,10 @@ namespace Full_GRASP_And_SOLID
 {
     public class FilePrinter : IPrinter
     {
-        public void PrintRecipe(Recipe recipe)
+        public void PrintRecipe(IRecipeContent recipeContent)
         {
-            File.WriteAllText("Recipe.txt", recipe.GetTextToPrint());
+            // tipo de IRecipeContent modificado por DIP
+            File.WriteAllText("Recipe.txt", recipeContent.GetTextToPrint());
         }
     }
 }
